@@ -76,7 +76,7 @@ var Map = function (_a) {
     return (React.createElement(React.Fragment, null,
         baseMap && (React.createElement(React.Fragment, null,
             React.createElement(SpreadLayer, { map: baseMap, layerName: "spreadfeb21310", show: showSpreadLayer }),
-            React.createElement(SpreadLayer, { map: baseMap, layerName: "wf2020_20201019-224nfi", show: showFireShapeLayer }))),
+            React.createElement(SpreadLayer, { map: baseMap, layerName: "wf2020", show: showFireShapeLayer }))),
         React.createElement("div", { ref: baseMapEl, className: className })));
 };
 
