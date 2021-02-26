@@ -54,7 +54,11 @@ const Map: React.FC<{
             layerName="spreadfeb21310"
             show={showSpreadLayer}
           />
-          <Layer map={baseMap} layerName="wf2020" show={showFireShapeLayer} />
+          <Layer
+            map={baseMap}
+            layerName="wf2020_20201019-224nfi"
+            show={showFireShapeLayer}
+          />
         </>
       )}
 
