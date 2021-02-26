@@ -8,6 +8,13 @@
 registry=https://npm.pkg.github.com/OurKettle
 ```
 
+- and you may need to authenticate on your server.
+
+```
+//npm.pkg.github.com/:_authToken=60968be85728d95edf7a6f1a0ca848b6d773ffcb
+@ourkettle:registry=https://npm.pkg.github.com/
+```
+
 https://docs.github.com/en/packages/guides/configuring-npm-for-use-with-github-packages#installing-a-package
 
 ```bash
