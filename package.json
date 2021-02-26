@@ -1,6 +1,6 @@
 {
   "name": "@ourkettle/marketing-embed-map",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "author": "Matt Lindeboom <matt.lindeboom@gmail.com>",
   "license": "UNLICENSED",
