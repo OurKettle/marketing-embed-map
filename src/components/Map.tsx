@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Mapboxgl from "mapbox-gl";
-import SpreadLayer from "./SpreadLayer";
+import Layer from "./Layer";
 import { MapSettings } from "../types";
 
 Mapboxgl.accessToken =
@@ -14,7 +14,7 @@ const Map: React.FC<{
   showFireShapeLayer: boolean;
   className: string;
   settings: MapSettings;
-}> = ({ showSpreadLayer, className, settings }) => {
+}> = ({ showSpreadLayer, showFireShapeLayer, className, settings }) => {
   const [baseMap, setBaseMap] = React.useState<any>(null);
   const baseMapEl = useRef() as React.MutableRefObject<HTMLDivElement>;
 
@@ -47,7 +47,16 @@ const Map: React.FC<{
 
   return (
     <>
-      {baseMap && <SpreadLayer map={baseMap} show={showSpreadLayer} />}
+      {baseMap && (
+        <>
+          <Layer
+            map={baseMap}
+            layerName="spreadfeb21310"
+            show={showSpreadLayer}
+          />
+          <Layer map={baseMap} layerName="wf2020" show={showFireShapeLayer} />
+        </>
+      )}
 
       <div ref={baseMapEl} className={className} />
     </>

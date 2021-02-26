@@ -4,20 +4,21 @@ const { useEffect, useState } = React;
 
 const SpreadLayer: React.FC<{
   show: boolean;
+  layerName: string;
   map: any;
-}> = ({ show, map }) => {
+}> = ({ show, layerName, map }) => {
   const [mapLoaded, setMapLoaded] = useState<boolean>(false);
 
   function showLayer() {
-    const layer = map.style.getLayer("spreadfeb21310");
+    const layer = map.style.getLayer(layerName);
     if (layer) {
-      map.setLayoutProperty("spreadfeb21310", "visibility", "visible");
+      map.setLayoutProperty(layerName, "visibility", "visible");
     }
   }
   function hideLayer() {
-    const layer = map.style.getLayer("spreadfeb21310");
+    const layer = map.style.getLayer(layerName);
     if (layer) {
-      map.setLayoutProperty("spreadfeb21310", "visibility", "none");
+      map.setLayoutProperty(layerName, "visibility", "none");
     }
   }
 

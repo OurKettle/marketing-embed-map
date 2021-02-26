@@ -9,18 +9,18 @@ var Mapboxgl__default = /*#__PURE__*/_interopDefaultLegacy(Mapboxgl);
 
 var useEffect = React.useEffect, useState = React.useState;
 var SpreadLayer = function (_a) {
-    var show = _a.show, map = _a.map;
+    var show = _a.show, layerName = _a.layerName, map = _a.map;
     var _b = useState(false), mapLoaded = _b[0], setMapLoaded = _b[1];
     function showLayer() {
-        var layer = map.style.getLayer("spreadfeb21310");
+        var layer = map.style.getLayer(layerName);
         if (layer) {
-            map.setLayoutProperty("spreadfeb21310", "visibility", "visible");
+            map.setLayoutProperty(layerName, "visibility", "visible");
         }
     }
     function hideLayer() {
-        var layer = map.style.getLayer("spreadfeb21310");
+        var layer = map.style.getLayer(layerName);
         if (layer) {
-            map.setLayoutProperty("spreadfeb21310", "visibility", "none");
+            map.setLayoutProperty(layerName, "visibility", "none");
         }
     }
     useEffect(function () {
@@ -47,7 +47,7 @@ Mapboxgl__default['default'].accessToken =
     "pk.eyJ1Ijoia2V0dGxla2V0dGxlIiwiYSI6ImNrbGxkZDR2ZDEwMDgycGx5cm83ejl5NWQifQ.Jc5tHw94MokeSr2jFqT4ow";
 var useEffect$1 = React.useEffect, useRef = React.useRef;
 var Map = function (_a) {
-    var showSpreadLayer = _a.showSpreadLayer, className = _a.className, settings = _a.settings;
+    var showSpreadLayer = _a.showSpreadLayer, showFireShapeLayer = _a.showFireShapeLayer, className = _a.className, settings = _a.settings;
     var _b = React.useState(null), baseMap = _b[0], setBaseMap = _b[1];
     var baseMapEl = useRef();
     var initializeMap = function () {
@@ -74,7 +74,9 @@ var Map = function (_a) {
         }
     }, [baseMapEl]);
     return (React.createElement(React.Fragment, null,
-        baseMap && React.createElement(SpreadLayer, { map: baseMap, show: showSpreadLayer }),
+        baseMap && (React.createElement(React.Fragment, null,
+            React.createElement(SpreadLayer, { map: baseMap, layerName: "spreadfeb21310", show: showSpreadLayer }),
+            React.createElement(SpreadLayer, { map: baseMap, layerName: "wf2020", show: showFireShapeLayer }))),
         React.createElement("div", { ref: baseMapEl, className: className })));
 };
 
