@@ -40,15 +40,21 @@ export default function () {
   const classes = useStyles();
 
   const [showSpread, setShowSpread] = useState(true);
+  const [showFire, setShowFire] = useState(true);
 
   return (
     <div>
       <EmbedMap
         className={classes.baseMap}
         showSpreadLayer={showSpread}
+        showFireShapeLayer={showFire}
       ></EmbedMap>
       <button onClick={() => setShowSpread(!showSpread)}>
-        {!showSpread ? "Show" : "Hide"}
+        {!showSpread ? "Show Spread" : "Hide Spread"}
+      </button>
+
+      <button onClick={() => setShowFire(!showFire)}>
+        {!showFire ? "Show Fire" : "Hide Fire"}
       </button>
     </div>
   );
