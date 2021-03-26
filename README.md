@@ -42,12 +42,24 @@ export default function () {
   const [showSpread, setShowSpread] = useState(true);
   const [showFire, setShowFire] = useState(true);
 
+  /*---optional map settings---*/
+  // {
+  //   zoom: number,
+  //   lat: float,
+  //   lon: float,
+  //   pitch: number,
+  // }
+  /*---------------------*/
+  const mapSettings = {
+    zoom: 7,
+  };
   return (
     <div>
       <EmbedMap
         className={classes.baseMap}
         showSpreadLayer={showSpread}
         showFireShapeLayer={showFire}
+        settings={mapSettings}
       ></EmbedMap>
       <button onClick={() => setShowSpread(!showSpread)}>
         {!showSpread ? "Show Spread" : "Hide Spread"}
