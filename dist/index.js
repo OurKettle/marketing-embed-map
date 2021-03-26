@@ -59,6 +59,8 @@ var Map = function (_a) {
                 zoom: settings.zoom,
                 pitch: settings.pitch,
             });
+            // disable map zoom when using scroll
+            map.scrollZoom.disable();
             setBaseMap(map);
         }
     };
